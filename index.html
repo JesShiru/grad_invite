@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jess’ Graduation Party</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--ink:#111;--pink:#f94f9b;--soft:#fde3ef;--gray:#f0f0f3;--mute:#8b8b93;--line:#e6e6ea;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);font-family:'Inter',system-ui,sans-serif;display:flex;justify-content:center;padding:28px 16px 48px}
+.wrap{width:100%;max-width:460px}
+.top{text-align:center}
+.top p{margin:0;color:var(--mute);font-size:17px}
+h1{font-family:'Playfair Display',Georgia,serif;font-weight:800;font-size:34px;line-height:1.1;margin:8px 0 10px;text-transform:uppercase}
+.bow{display:flex;align-items:center;gap:12px;justify-content:center}
+.bow i{height:2px;width:70px;background:var(--pink);opacity:.7}
+.cal{margin-top:22px;border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 6px 18px rgba(0,0,0,.06)}
+.cal .mh{background:var(--ink);color:#fff;text-align:center;font-weight:600;letter-spacing:.08em;padding:14px;font-size:19px}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;padding:8px 8px 18px;row-gap:6px}
+.grid .wd{color:var(--mute);font-size:12px;padding:10px 0;font-weight:500}
+.grid .d{height:40px;display:flex;align-items:center;justify-content:center;font-size:16px;position:relative}
+.grid .party{color:var(--ink);font-weight:700}
+.grid .party b{width:40px;height:40px;border:2.5px solid var(--pink);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.grid .party svg{position:absolute;top:-16px;left:50%;transform:translateX(-50%) rotate(-8deg)}
+.pill{display:inline-block;background:var(--pink);color:#fff;font-size:12px;font-weight:500;padding:5px 12px;border-radius:99px}
+.when{text-align:center;padding:0 12px 16px;font-size:14px;color:var(--mute)}
+.when .pill{margin-bottom:10px}
+.box{margin-top:18px;background:var(--gray);border-radius:18px;padding:20px}
+label{display:block;font-weight:600;font-size:14px;margin-bottom:8px}
+label span{font-weight:400}
+.f{display:flex;gap:12px}.f>div:first-child{flex:1.5}.f>div:last-child{flex:1}
+input,select{width:100%;height:46px;border:1.5px solid var(--ink);border-radius:10px;background:#fff;padding:0 12px;font:inherit;font-size:16px}
+input:focus,select:focus{outline:none;border-color:var(--pink)}
+.btns{display:flex;gap:12px;margin-top:18px}
+button,a.wa{flex:1;height:50px;border-radius:99px;font:inherit;font-weight:600;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;text-decoration:none;border:1.5px solid var(--ink)}
+.yes{background:var(--pink);border-color:var(--pink);color:#fff}
+.no{background:#fff;color:var(--ink)}
+.err{color:var(--pink);font-size:14px;margin-top:10px;min-height:1em}
+.done{text-align:center}
+.done h2{font-family:'Playfair Display',Georgia,serif;font-size:24px;margin:0 0 8px}
+.done p{margin:0 0 16px;color:#444;line-height:1.5}
+a.wa{background:var(--pink);border-color:var(--pink);color:#fff;width:100%}
+.hide{display:none!important}
+.host{margin-top:34px;border-top:2px solid var(--ink);padding-top:24px}
+.host h3{font-size:22px;font-weight:800;margin:0 0 14px;font-family:'Playfair Display',Georgia,serif;text-transform:uppercase}
+.tot{display:flex;gap:10px;margin-bottom:14px}
+.tot div{flex:1;background:var(--gray);border-radius:12px;padding:10px;text-align:center;font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.06em}
+.tot b{display:block;font-size:26px;color:var(--pink);letter-spacing:0}
+textarea{width:100%;min-height:80px;border:1.5px solid var(--ink);border-radius:10px;padding:10px;font:inherit;font-size:15px;resize:vertical}
+.small{height:40px;flex:none;padding:0 16px;font-size:14px;margin-top:8px;width:auto}
+.cols{display:grid;gap:14px;margin-top:16px}
+.col{border-radius:16px;padding:14px;border-top:6px solid var(--pink);background:var(--soft)}
+.col.g{background:var(--gray);border-top-color:#9a9aa2}
+.col h4{margin:0 0 12px;font-size:15px;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.col.g h4{color:var(--mute)}
+.badge{background:var(--pink);color:#fff;border-radius:99px;padding:2px 10px;font-size:14px}
+.col.g .badge{background:#9a9aa2}
+.gc{background:#fff;border-radius:10px;padding:10px 12px;margin-bottom:8px;border:1px solid var(--line)}
+.gc .n{font-weight:600}
+.tag{display:inline-block;margin-top:6px;background:var(--soft);color:var(--pink);border-radius:99px;padding:3px 10px;font-size:13px}
+.row{display:flex;gap:6px;margin-top:8px;align-items:center}
+.row select{height:34px;width:62px;font-size:14px}
+.row button{height:34px;font-size:13px;padding:0 12px;flex:none}
+.x{border:0;background:none;color:var(--mute);font-size:12px;height:auto;margin-top:6px;padding:0;text-decoration:underline;flex:none}
+.foot{text-align:center;margin-top:26px;font-size:12px;color:var(--mute)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <p>You are invited to celebrate</p>
+    <h1>Jess’ Graduation</h1>
+    <div class="bow"><i></i>
+      <svg width="54" height="34" viewBox="0 0 54 34" fill="none" stroke="#f94f9b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M27 17C18 4 3 2 3 12s14 12 24 5c10 7 24 5 24-5S36 4 27 17Z"/><path d="M27 17l-8 15M27 17l8 15"/></svg>
+    <i></i></div>
+  </div>
+
+  <div class="cal">
+    <div class="mh">NOVEMBER 2026</div>
+    <div class="grid" id="grid"></div>
+    <div class="when">
+      <span class="pill">Jess’ Graduation Party</span><br>
+      <span id="when"></span>
+    </div>
+  </div>
+
+  <section class="box" id="form">
+    <div class="f">
+      <div><label for="name">Guest Name</label><input id="name" maxlength="60" autocomplete="name" placeholder="Your full name"></div>
+      <div><label for="size">Party Size <span>(counting yourself)</span></label><select id="size"></select></div>
+    </div>
+    <div class="btns">
+      <button class="yes" id="by">I’ll be there</button>
+      <button class="no" id="bn">Won’t make it</button>
+    </div>
+    <div class="err" id="err"></div>
+  </section>
+
+  <section class="box done hide" id="done"></section>
+
+  <section class="host hide" id="host">
+    <h3>Host dashboard</h3>
+    <div class="tot">
+      <div><b id="t-yes">0</b>Parties coming</div>
+      <div><b id="t-heads">0</b>Total guests</div>
+      <div><b id="t-no">0</b>Won’t make it</div>
+    </div>
+    <label for="add">Add guests to your list (one name per line)</label>
+    <textarea id="add" placeholder="Alex Rivera&#10;Sam Taylor"></textarea>
+    <button class="yes small" id="addbtn">Add to list</button>
+    <div class="cols">
+      <div class="col"><h4>Have RSVP’d <span class="badge" id="n-r">0</span></h4><div id="l-r"></div></div>
+      <div class="col g"><h4>Haven’t RSVP’d yet <span class="badge" id="n-p">0</span></h4><div id="l-p"></div></div>
+    </div>
+    <p class="foot" style="text-align:left">When a guest’s WhatsApp message arrives, tap ✓ or ✗ next to their name.</p>
+  </section>
+
+  <div class="foot">With love, Jess ♥</div>
+</div>
+
+<script>
+
+const CONFIG = {
+  time: "TIME",
+  venue: "Home, Maragua",
+  hostWhatsApp: "254788444620" 
+};
+// ======================
+const $ = id => document.getElementById(id);
+const el = (t, c, txt) => { const e = document.createElement(t); if (c) e.className = c; if (txt != null) e.textContent = txt; return e; };
+
+$("when").textContent = "Saturday, 21 November 2026 · " + CONFIG.time + " · " + CONFIG.venue;
+for (let i = 1; i <= 10; i++) { const o = el("option", "", i); o.value = i; $("size").append(o); }
+
+// Calendar
+const grid = $("grid");
+["MON","TUE","WED","THU","FRI","SAT","SUN"].forEach(w => grid.append(el("div", "wd", w)));
+const offset = (new Date(2026, 10, 1).getDay() + 6) % 7;
+for (let i = 0; i < offset; i++) grid.append(el("div", "d"));
+for (let d = 1; d <= 30; d++) {
+  const c = el("div", "d" + (d === 21 ? " party" : ""));
+  if (d === 21) {
+    c.innerHTML = '<svg width="44" height="30" viewBox="0 0 44 30"><path d="M22 2 2 11l20 9 20-9z" fill="#111"/><path d="M11 16v7c0 3 22 3 22 0v-7l-11 5z" fill="#111"/><path d="M40 12v10" stroke="#f94f9b" stroke-width="2"/><circle cx="40" cy="24" r="2.5" fill="#f94f9b"/></svg>';
+    c.append(el("b", "", "21"));
+  } else c.textContent = d;
+  grid.append(c);
+}
+
+// Guest RSVP
+function waLink(t){ return "https://wa.me/" + CONFIG.hostWhatsApp + "?text=" + encodeURIComponent(t); }
+function showDone(status, name, size){
+  $("form").classList.add("hide");
+  const d = $("done"); d.classList.remove("hide"); d.textContent = "";
+  const yes = status === "yes";
+  const msg = yes ? name + " (Party of " + size + "): I’ll be there"
+                  : name + ": Apologies, won’t make it — so sorry to miss it! Congratulations Jess 🎓";
+  const a = el("a", "wa", yes ? "Send my RSVP on WhatsApp" : "Send my apology on WhatsApp");
+  a.href = waLink(msg); a.target = "_blank"; a.rel = "noopener";
+  d.append(el("h2", "", yes ? "See you there, " + name + "!" : "We’ll miss you, " + name),
+           el("p", "", "One last step: tap below so your reply reaches Jess on WhatsApp."), a);
+}
+function submit(status){
+  const name = $("name").value.trim();
+  if (!name) { $("err").textContent = "Please enter your name."; return; }
+  const size = parseInt($("size").value) || 1;
+  try { localStorage.setItem("rsvp", JSON.stringify({status, name, size})); } catch (e) {}
+  showDone(status, name, size);
+}
+$("by").onclick = () => submit("yes");
+$("bn").onclick = () => submit("no");
+try { const s = JSON.parse(localStorage.getItem("rsvp") || "null"); if (s && s.name) showDone(s.status, s.name, s.size); } catch (e) {}
+
+// Host dashboard
+let guests = [], db = null;
+function save(){
+  try { localStorage.setItem("guests", JSON.stringify(guests)); } catch (e) {}
+  if (db) db.collection("host").doc("list").set({guests}).catch(() => {});
+}
+function render(){
+  const r = $("l-r"), p = $("l-p"); r.textContent = ""; p.textContent = "";
+  let yes = 0, no = 0, heads = 0, nr = 0, np = 0;
+  guests.forEach((g, i) => {
+    const c = el("div", "gc"); c.append(el("div", "n", g.name));
+    if (g.status) {
+      nr++;
+      const isYes = g.status === "yes";
+      if (isYes) { yes++; heads += g.size; } else no++;
+      c.append(el("span", "tag", isYes ? "Party of " + g.size + "  (I’ll be there)" : "Party of 1  (Apology / won’t make it)"));
+      const u = el("button", "x", "Undo"); u.onclick = () => { g.status = null; save(); render(); }; c.append(document.createElement("br"), u);
+      r.append(c);
+    } else {
+      np++;
+      const row = el("div", "row"); const s = el("select");
+      for (let k = 1; k <= 10; k++) { const o = el("option", "", k); o.value = k; s.append(o); }
+      const y = el("button", "yes", "✓ Coming"), n = el("button", "no", "✗ Can’t");
+      y.onclick = () => { g.status = "yes"; g.size = parseInt(s.value); save(); render(); };
+      n.onclick = () => { g.status = "no"; g.size = 1; save(); render(); };
+      row.append(s, y, n); c.append(row);
+      const rm = el("button", "x", "Remove"); rm.onclick = () => { guests.splice(i, 1); save(); render(); }; c.append(rm);
+      p.append(c);
+    }
+  });
+  $("n-r").textContent = nr; $("n-p").textContent = np;
+  $("t-yes").textContent = yes; $("t-heads").textContent = heads; $("t-no").textContent = no;
+}
+$("addbtn").onclick = () => {
+  $("add").value.split("\n").map(s => s.trim()).filter(Boolean).forEach(n => guests.push({name: n, status: null, size: 1}));
+  $("add").value = ""; save(); render();
+};
+(async () => {
+  let isHost = location.hash === "#host";
+  try {
+    const user = await claude.use("user");
+    db = await claude.use("db");
+    if (user && await user.canEdit()) isHost = true;
+    if (!isHost) return;
+    if (db) { try { const s = await db.collection("host").doc("list").get(); if (s.exists) guests = s.data().guests || []; } catch (e) { db = null; } }
+  } catch (e) {}
+  if (!isHost) return;
+  if (!guests.length) { try { guests = JSON.parse(localStorage.getItem("guests") || "[]"); } catch (e) {} }
+  $("host").classList.remove("hide"); render();
+})();
+</script>
+</body>
+</html>
